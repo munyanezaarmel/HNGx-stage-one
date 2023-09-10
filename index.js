@@ -7,19 +7,17 @@ const {
 } = require("date-fns");
 
 const app = express();
-const port = 3000; // You can change this to any port you prefer
+const port = 3000; 
 
 app.get("/api", (req, res) => {
   const { slack_name, track } = req.query;
 
-  // Get the current UTC time
+
   const now = new Date();
   const utcTime = format(now, "yyyy-MM-dd'T'HH:mm:ss'Z'");
 
-  // Get the current day of the week
   const currentDay = format(now, "EEEE");
 
-  // Validate UTC time within a +/-2 minute window
   const twoMinutesAgo = subMinutes(now, 2);
   const twoMinutesFromNow = addMinutes(now, 2);
   const isValidTime = isWithinInterval(now, {
@@ -32,8 +30,8 @@ app.get("/api", (req, res) => {
   }
 
   const githubFileUrl =
-    "https://github.com/munyanezaarmel/HNGx-stage-one/blob/main/index.js"; // Replace with your actual file URL
-  const githubRepoUrl = "https://github.com/munyanezaarmel/HNGx-stage-one"; // Replace with your actual repo URL
+    "https://github.com/munyanezaarmel/HNGx-stage-one/blob/main/index.js"; 
+  const githubRepoUrl = "https://github.com/munyanezaarmel/HNGx-stage-one"; 
 
   const response = {
     slack_name,
