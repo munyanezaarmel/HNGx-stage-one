@@ -31,8 +31,9 @@ app.get("/api", (req, res) => {
     return res.status(400).json({ error: "Invalid request parameters" });
   }
 
-  const githubFileUrl = "https://github.com/username/repo/blob/main/server.js"; // Replace with your actual file URL
-  const githubRepoUrl = "https://github.com/username/repo"; // Replace with your actual repo URL
+  const githubFileUrl =
+    "https://github.com/munyanezaarmel/HNGx-stage-one/blob/main/index.js"; // Replace with your actual file URL
+  const githubRepoUrl = "https://github.com/munyanezaarmel/HNGx-stage-one"; // Replace with your actual repo URL
 
   const response = {
     slack_name,
